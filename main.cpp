@@ -61,3 +61,17 @@ void insertarInicio(Nodo*& lista, Producto producto){
     lista = nuevoNodo;
     std::cout << "Producto insertado al inicio de la lista" << std::endl;
 }
+
+
+void imprimir(Nodo* inicio){
+
+    Nodo* actual = inicio;
+    while (actual != nullptr)
+    {
+        std::cout << "Codigo: " <<actual->producto.codigo <<std::endl;
+        std::cout << "Nombre: " <<actual->producto.Nombre <<std::endl;
+        std::cout << "Precio: $ " <<actual->producto.Precio <<std::endl;
+        actual = actual->siguiente;
+
+    }  
+}

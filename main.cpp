@@ -14,19 +14,38 @@ struct Nodo{
 };
 
 
-void insertarProducto(Nodo*& lista, Producto producto);
+void insertarInicio(Nodo*& lista, Producto producto);
 void eliminarProducto(Nodo*& lista, int codigo);
+void imprimir(Nodo* inicio);
 
 int main() {
+    Nodo* lista = nullptr;
+    Producto producto;
 
     std::cout << "Bienvenido al sistema de inventario" << std::endl;
-    std::cout << "Ingrese el nombre del producto: ";
-    Producto producto;
-    std::cin >> producto.Nombre;
-    std::cout << "Ingrese el codigo del producto: ";
-    std::cin >> producto.codigo;
-    std::cout << "Ingrese el precio del producto: ";
-    std::cin >> producto.Precio;
+
+    producto.Nombre = "Producto 1";
+    producto.codigo = 1;
+    producto.Precio = 100.0;
+    insertarInicio(lista, producto);
+
+    producto.Nombre = "Producto 2";
+    producto.codigo = 2;
+    producto.Precio = 200.0;
+    insertarInicio(lista, producto);
+
+    producto.Nombre = "Producto 3";
+    producto.codigo = 3;
+    producto.Precio = 300.0;
+    insertarInicio(lista, producto);
+
+    std::cout << "Lista de productos:" << std::endl;
+    imprimir(lista);
+
+    eliminarProducto(lista, 2);
+
+    std::cout << "Lista despues de eliminar el producto 2:" << std::endl;
+    imprimir(lista);
     return 0;
 }
 

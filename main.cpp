@@ -29,6 +29,29 @@ int main() {
     return 0;
 }
 
+void eliminarProducto(Nodo*& lista, int codigo) {
+    Nodo* actual = lista;
+    Nodo* anterior = nullptr;
+
+    while (actual != nullptr && actual->producto.codigo != codigo) {
+        anterior = actual;
+        actual = actual->siguiente;
+    }
+
+    if (actual == nullptr) {
+        std::cout << "Producto no encontrado." << std::endl;
+        return;
+    }
+
+    if (anterior == nullptr) {
+        lista = actual->siguiente;
+    } else {
+        anterior->siguiente = actual->siguiente;
+    }
+
+    delete actual;
+    std::cout << "Producto eliminado." << std::endl;
+}
 
 void insertarInicio(Nodo*& lista, Producto producto){
     Nodo* nuevoNodo = new Nodo();

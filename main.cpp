@@ -7,6 +7,15 @@ struct Producto {
     double Precio;
 };
 
+
+struct Nodo{
+    Producto producto;
+    Nodo* siguiente;
+};
+
+
+void insertarProducto(Nodo*& lista, Producto producto);
+
 int main() {
 
     std::cout << "Vienvenido al sistema de inventario" << std::endl;
@@ -18,4 +27,13 @@ int main() {
     std::cout << "Ingrese el precio del producto: ";
     std::cin >> producto.Precio;
     return 0;
+}
+
+
+void insertarInicio(Nodo*& lista, Producto producto){
+    Nodo* nuevoNodo = new Nodo();
+    nuevoNodo->producto = producto;
+    nuevoNodo->siguiente = lista;
+    lista = nuevoNodo;
+    std::cout << "Producto insertado al inicio de la lista" << std::endl;
 }

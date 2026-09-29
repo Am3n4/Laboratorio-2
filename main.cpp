@@ -18,7 +18,7 @@ void insertarProducto(Nodo*& lista, Producto producto);
 
 int main() {
 
-    std::cout << "Vienvenido al sistema de inventario" << std::endl;
+    std::cout << "Bienvenido al sistema de inventario" << std::endl;
     std::cout << "Ingrese el nombre del producto: ";
     Producto producto;
     std::cin >> producto.Nombre;
